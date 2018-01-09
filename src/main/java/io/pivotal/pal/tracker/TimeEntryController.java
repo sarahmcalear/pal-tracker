@@ -36,9 +36,6 @@ public class TimeEntryController {
     public ResponseEntity<List<TimeEntry>> list() {
         List<TimeEntry> timeEntries = timeEntryRepository.list();
 
-        if (timeEntries.size() == 0) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
         return ResponseEntity.ok(timeEntries);
     }
 
